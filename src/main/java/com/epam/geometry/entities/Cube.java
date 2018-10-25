@@ -1,8 +1,21 @@
 package com.epam.geometry.entities;
 
 public class Cube {
-    private double side;
+    protected double side;
     private Point centerPoint;
+    private long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setSide(double side) {
+        this.side = side;
+    }
 
     public Cube(double side, Point centerPoint) {
         this.side = side;
