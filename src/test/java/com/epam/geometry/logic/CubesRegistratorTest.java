@@ -8,12 +8,12 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CubeRegistratorTest {
+public class CubesRegistratorTest {
 
     private static final ObservedCube OBSERVED_CUBE = new ObservedCube(1, new Point(1, 1, 1));
     private static final CubeValues CUBE_VALUES = new CubeValues(0, 6, 1);
     private static final Long ID = 0L;
-    private CubeRegistrator cubeRegistrator = new CubeRegistrator();
+    private CubesRegistrator cubesRegistrator = new CubesRegistrator();
     private Map<Long, CubeValues> cubeValuesMap = new HashMap<>();
 
     @Before
@@ -23,7 +23,7 @@ public class CubeRegistratorTest {
 
     @Test
     public void shouldAddCubeValuesToMap() {
-        cubeRegistrator.handleEvent(OBSERVED_CUBE);
-        Assert.assertEquals(cubeRegistrator.getCubeValuesMap(), cubeValuesMap);
+        cubesRegistrator.handleEvent(OBSERVED_CUBE);
+        Assert.assertEquals(cubesRegistrator.getCubeValuesMap(), cubeValuesMap);
     }
 }

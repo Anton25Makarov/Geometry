@@ -3,9 +3,9 @@ package com.epam.geometry.logic;
 import com.epam.geometry.entities.Cube;
 import com.epam.geometry.entities.Point;
 import com.epam.geometry.repository.CubeRepository;
+import com.epam.geometry.repository.specifications.IdSpecification;
 import com.epam.geometry.repository.Repository;
-import com.epam.geometry.repository.Specification;
-import com.epam.geometry.repository.VolumeGreaterThenSpecification;
+import com.epam.geometry.repository.specifications.VolumeGreaterThenSpecification;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -24,6 +24,16 @@ public class CubeRepositoryTest {
     public void shouldFindByVolume() {
 //        Specification<Cube> mock = Mockito.mock(Specification.class);
         List<Cube> result = repository.findBy(new VolumeGreaterThenSpecification(1));
+
+        Assert.assertEquals(1, result.size());
+
+        Cube first = result.get(0);
+        Assert.assertEquals(FIRST_CUBE, first);
+    }
+
+    @Test
+    public void shouldFindById() {
+        List<Cube> result = repository.findBy(new IdSpecification(0));
 
         Assert.assertEquals(1, result.size());
 

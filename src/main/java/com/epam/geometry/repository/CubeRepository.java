@@ -12,8 +12,26 @@ public class CubeRepository implements Repository<Cube> {
     private Map<Long, Cube> data = new HashMap<>();
 
     @Override
-    public void add(Cube obj) {
-        data.put(obj.getId(), obj);
+    public void add(Cube cube) {
+        data.put(cube.getId(), cube);
+    }
+
+    @Override
+    public void remove(Cube cube) {
+        data.remove(cube.getId(), cube);
+    }
+
+    @Override
+    public void update(Cube cube) {
+        if (data.containsKey(cube.getId())) {
+            data.put(cube.getId(), cube);
+        }
+    }
+
+    @Override
+    public void sortBy(Specification specification) {
+//        data.values().stream().sorted(o -> specification.specified(o)).collect(Collectors.toList());
+//        data.entrySet().stream().sorted(Map.Entry.comparingByKey());
     }
 
     @Override
@@ -21,4 +39,6 @@ public class CubeRepository implements Repository<Cube> {
         return data.values().stream().
                 filter(o -> specification.specified(o)).collect(Collectors.toList());
     }
+
+
 }

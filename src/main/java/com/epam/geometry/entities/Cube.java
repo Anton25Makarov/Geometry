@@ -1,39 +1,40 @@
 package com.epam.geometry.entities;
 
+import com.epam.geometry.Generator;
+
 public class Cube {
     protected double side;
+    protected long id;
     private Point centerPoint;
-    private long id;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setSide(double side) {
-        this.side = side;
-    }
 
     public Cube(double side, Point centerPoint) {
         this.side = side;
         this.centerPoint = centerPoint;
+        id = Generator.generateID();
     }
 
     public Cube(double side) {
         this.side = side;
         this.centerPoint = new Point();
+        id = Generator.generateID();
     }
 
     public Cube(Cube cube) {
         this.centerPoint = cube.centerPoint;
         this.side = cube.side;
+        id = Generator.generateID();
+    }
+
+    public long getId() {
+        return id;
     }
 
     public double getSide() {
         return side;
+    }
+
+    public void setSide(double side) {
+        this.side = side;
     }
 
     public Point getCenterPoint() {

@@ -9,7 +9,9 @@ public class CalculatorTest {
     private static final Cube CUBE = new Cube(2);
     private static final Cube CUBE_FOR_VOLUME_RATION = new Cube(10, new Point(0, 0, 0));
     private static final Cube CUBE_ON_COORDINATE_PLANE = new Cube(10, new Point(0, 5, 0));
+    private static final Cube CUBE_FOR_DISTANCE = new Cube(10, new Point(5, 5, 5));
     private static final Point POINT = new Point(0, -3, 0);
+    private static final double DISTANCE = 8.66;
     private static final double DELTA = 0.01;
 
     private Calculator calculator = new Calculator();
@@ -56,5 +58,16 @@ public class CalculatorTest {
 
         // then
         Assert.assertTrue(result);
+    }
+
+    @Test
+    public void shouldCalculateAndReturnDistanceBetweenOriginAndCenterPointOfTheCube() {
+        // given
+
+        // when
+        double result = calculator.calculateDistanceBetweenOriginAndCenterPoint(CUBE_FOR_DISTANCE);
+
+        // then
+        Assert.assertEquals(DISTANCE, result, DELTA);
     }
 }

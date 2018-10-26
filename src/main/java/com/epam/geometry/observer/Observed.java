@@ -1,4 +1,4 @@
-package com.epam.geometry.observing;
+package com.epam.geometry.observer;
 
 public interface Observed {
     void addObserver(Observer observer);

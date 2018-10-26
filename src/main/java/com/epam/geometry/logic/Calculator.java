@@ -45,4 +45,13 @@ public class Calculator {
 
         return false;
     }
+
+    public double calculateDistanceBetweenOriginAndCenterPoint(Cube cube) {
+        Point centerPoint = cube.getCenterPoint();
+        double xSquared = Math.pow(centerPoint.getX(), 2);
+        double ySquared = Math.pow(centerPoint.getY(), 2);
+        double zSquared = Math.pow(centerPoint.getZ(), 2);
+
+        return Math.sqrt(xSquared + ySquared + zSquared);
+    }
 }

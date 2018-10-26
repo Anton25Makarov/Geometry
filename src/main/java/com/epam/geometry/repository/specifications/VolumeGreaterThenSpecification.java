@@ -1,7 +1,8 @@
-package com.epam.geometry.repository;
+package com.epam.geometry.repository.specifications;
 
 import com.epam.geometry.entities.Cube;
 import com.epam.geometry.logic.Calculator;
+import com.epam.geometry.repository.Specification;
 
 public class VolumeGreaterThenSpecification implements Specification<Cube> {
 
@@ -14,8 +15,8 @@ public class VolumeGreaterThenSpecification implements Specification<Cube> {
     }
 
     @Override
-    public boolean specified(Cube obj) {
-        double currentVolume = calculator.calculateVolume(obj);
+    public boolean specified(Cube cube) {
+        double currentVolume = calculator.calculateVolume(cube);
 
         return Double.compare(currentVolume, volume) > 0;
 

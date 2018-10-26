@@ -1,31 +1,26 @@
 package com.epam.geometry.entities;
 
-import com.epam.geometry.Generator;
-import com.epam.geometry.observing.Observed;
-import com.epam.geometry.observing.Observer;
+import com.epam.geometry.observer.Observed;
+import com.epam.geometry.observer.Observer;
 
 import java.util.*;
 
 public class ObservedCube extends Cube implements Observed {
 
-    private long id;
     private List<Observer> observers = new ArrayList<>();
 
     public ObservedCube(double side, Point centerPoint) {
         super(side, centerPoint);
-        id = Generator.generateID();
         notifyObserver();
     }
 
     public ObservedCube(double side) {
         super(side);
-        id = Generator.generateID();
         notifyObserver();
     }
 
     public ObservedCube(Cube cube) {
         super(cube);
-        id = Generator.generateID();
         notifyObserver();
     }
 

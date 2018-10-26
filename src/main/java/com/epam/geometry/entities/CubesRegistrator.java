@@ -1,13 +1,13 @@
 package com.epam.geometry.entities;
 
 import com.epam.geometry.logic.Calculator;
-import com.epam.geometry.observing.Observer;
+import com.epam.geometry.observer.Observer;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class CubeRegistrator implements Observer {
+public class CubesRegistrator implements Observer {
 
     private Map<Long, CubeValues> cubeValuesMap = new HashMap<>();
 
@@ -30,7 +30,7 @@ public class CubeRegistrator implements Observer {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CubeRegistrator that = (CubeRegistrator) o;
+        CubesRegistrator that = (CubesRegistrator) o;
         return Objects.equals(cubeValuesMap, that.cubeValuesMap);
     }
 
@@ -41,7 +41,7 @@ public class CubeRegistrator implements Observer {
 
     @Override
     public String toString() {
-        return "CubeRegistrator{" +
+        return "CubesRegistrator{" +
                 "cubeValuesMap=" + cubeValuesMap +
                 '}';
     }
