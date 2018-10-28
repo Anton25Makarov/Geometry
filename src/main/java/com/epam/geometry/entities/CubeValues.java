@@ -27,8 +27,12 @@ public class CubeValues {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         CubeValues that = (CubeValues) o;
         return id == that.id &&
                 Double.compare(that.square, square) == 0 &&
