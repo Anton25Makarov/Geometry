@@ -8,14 +8,14 @@ import java.util.List;
 
 public class DataParser {
 
-    private Validator validator;
+    private CubeValidator cubeValidator;
 
-    DataParser(Validator validator) {
-        this.validator = validator;
+    DataParser(CubeValidator cubeValidator) {
+        this.cubeValidator = cubeValidator;
     }
 
     public Cube parseCube(String string) {
-        if (!validator.isValid(string)) {
+        if (!cubeValidator.isValid(string)) {
             return null;
         }
 
@@ -31,7 +31,7 @@ public class DataParser {
         List<Cube> cubeList = new ArrayList<>();
 
         for (String string : stringList) {
-            if (validator.isValid(string)) {
+            if (cubeValidator.isValid(string)) {
                 String[] values = string.split(" ");
                 Point point = new Point(Double.valueOf(values[1]), Double.valueOf(values[2]), Double.valueOf(values[3]));
                 Cube cube = new Cube(Double.valueOf(values[0]), point);

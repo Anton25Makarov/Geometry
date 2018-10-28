@@ -17,8 +17,6 @@ public class VolumeGreaterThenSpecification implements Specification<Cube> {
     @Override
     public boolean specified(Cube cube) {
         double currentVolume = calculator.calculateVolume(cube);
-
-        return Double.compare(currentVolume, volume) > 0;
-
+        return currentVolume > volume;
     }
 }

@@ -19,7 +19,7 @@ public class DataParserTest {
     @Test
     public void shouldReturnCubeWhenStringIsValid() {
         // given
-        DataParser dataParser = new DataParser(new Validator());
+        DataParser dataParser = new DataParser(new CubeValidator());
 
         // when
         Cube cube = dataParser.parseCube(VALID_STRING_FIRST);
@@ -31,7 +31,7 @@ public class DataParserTest {
     @Test
     public void shouldReturnListOfCubesWhenStringsAreCorrect() {
         // given
-        DataParser dataParser = new DataParser(new Validator());
+        DataParser dataParser = new DataParser(new CubeValidator());
 
         List<String> stringList = new ArrayList<>();
         stringList.add(VALID_STRING_FIRST);

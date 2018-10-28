@@ -1,7 +1,7 @@
 package com.epam.geometry.observer;
 
-import com.epam.geometry.entities.ObservedCube;
+import com.epam.geometry.entities.CubeObservable;
 
 public interface Observer {
-    void handleEvent(ObservedCube cube);
+    void handleEvent(CubeObservable cube);
 }

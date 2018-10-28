@@ -1,6 +1,6 @@
 package com.epam.geometry.logic;
 
-public class Validator {
+public class CubeValidator {
     private static final String numberPattern = "[-]?\\d+\\.?\\d*";
 
     public boolean isValid(String lineFromFile) {

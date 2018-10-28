@@ -2,6 +2,7 @@ package com.epam.geometry.repository;
 
 import com.epam.geometry.entities.Cube;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,16 +30,27 @@ public class CubeRepository implements Repository<Cube> {
     }
 
     @Override
-    public void sortBy(Specification specification) {
-//        data.values().stream().sorted(o -> specification.specified(o)).collect(Collectors.toList());
-//        data.entrySet().stream().sorted(Map.Entry.comparingByKey());
+    public List<Cube> sortBy(Comparator comparator) {
+        Collection<Cube> dataValues = data.values();
+        return dataValues.stream().
+                sorted((e1, e2) -> comparator.compare(e1, e2)).collect(Collectors.toList());
     }
 
     @Override
     public List<Cube> findBy(Specification specification) {
-        return data.values().stream().
+        Collection<Cube> dataValues = data.values();
+        return dataValues.stream().
                 filter(o -> specification.specified(o)).collect(Collectors.toList());
     }
 
+    public Map<Long, Cube> getMapOfCubes() {
+        return data;
+    }
 
+    @Override
+    public String toString() {
+        return "CubeRepository{" +
+                "data=" + data +
+                '}';
+    }
 }

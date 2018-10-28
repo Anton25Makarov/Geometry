@@ -17,16 +17,8 @@ public class CubeValues {
         return square;
     }
 
-    public void setSquare(double square) {
-        this.square = square;
-    }
-
     public double getVolume() {
         return volume;
-    }
-
-    public void setVolume(double volume) {
-        this.volume = volume;
     }
 
     public long getId() {

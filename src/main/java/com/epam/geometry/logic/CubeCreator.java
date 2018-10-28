@@ -11,9 +11,14 @@ import com.epam.geometry.exceptions.ReadFileException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Creator {
+public class CubeCreator {
 
-    private static final Logger LOGGER = LogManager.getLogger(Creator.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(CubeCreator.class.getName());
+    private DataParser dataParser;
+
+    CubeCreator(DataParser dataParser) {
+        this.dataParser = dataParser;
+    }
 
     public List<Cube> createCubesFromFile(String filePath) {
         List<Cube> listOfCubes = new ArrayList<>();
@@ -21,8 +26,6 @@ public class Creator {
         try {
             DataReader dataReader = new DataReader();
             List<String> linesFromFile = dataReader.readLines(filePath);
-
-            DataParser dataParser = new DataParser(new Validator());
 
             listOfCubes = dataParser.parseCubes(linesFromFile);
 

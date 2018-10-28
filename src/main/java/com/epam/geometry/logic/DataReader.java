@@ -21,7 +21,7 @@ public class DataReader {
         } catch (NoSuchFileException e) {
             throw new ReadFileException("Can not find file", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new ReadFileException("Can not open file", e);
         }
 
         return stringList;

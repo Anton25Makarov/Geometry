@@ -1,37 +1,37 @@
 package com.epam.geometry.entities;
 
-import com.epam.geometry.observer.Observed;
+import com.epam.geometry.observer.Observable;
 import com.epam.geometry.observer.Observer;
 
 import java.util.*;
 
-public class ObservedCube extends Cube implements Observed {
+public class CubeObservable extends Cube implements Observable<Observer> {
 
     private List<Observer> observers = new ArrayList<>();
 
-    public ObservedCube(double side, Point centerPoint) {
+    public CubeObservable(double side, Point centerPoint) {
         super(side, centerPoint);
         notifyObserver();
     }
 
-    public ObservedCube(double side) {
+    public CubeObservable(double side) {
         super(side);
         notifyObserver();
     }
 
-    public ObservedCube(Cube cube) {
+    public CubeObservable(Cube cube) {
         super(cube);
         notifyObserver();
     }
 
     public void setSide(double side) {
-        super.side = side;
+        super.setSide(side);
         notifyObserver();
     }
 
     @Override
     public long getId() {
-        return id;
+        return super.getId();
     }
 
     @Override
@@ -56,21 +56,19 @@ public class ObservedCube extends Cube implements Observed {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        ObservedCube that = (ObservedCube) o;
-        return id == that.id &&
-                Objects.equals(observers, that.observers);
+        CubeObservable that = (CubeObservable) o;
+        return Objects.equals(observers, that.observers);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, observers);
+        return Objects.hash(super.hashCode(), observers);
     }
 
     @Override
     public String toString() {
-        return "ObservedCube{" +
-                "id=" + id +
-                ", observers=" + observers +
+        return "CubeObservable{" +
+                "observers=" + observers +
                 '}';
     }
 }

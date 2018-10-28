@@ -70,4 +70,5 @@ public class CalculatorTest {
         // then
         Assert.assertEquals(DISTANCE, result, DELTA);
     }
+
 }

@@ -1,7 +1,6 @@
 package com.epam.geometry.repository.specifications;
 
 import com.epam.geometry.entities.Cube;
-import com.epam.geometry.logic.Calculator;
 import com.epam.geometry.repository.Specification;
 
 public class IdSpecification implements Specification<Cube> {

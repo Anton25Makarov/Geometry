@@ -10,7 +10,7 @@ public interface Repository<T> {
 
     void update(T obj);
 
-    void sortBy(Specification specification);
+    List<T> sortBy(Comparator comparator);
 
     List<T> findBy(Specification specification);
 

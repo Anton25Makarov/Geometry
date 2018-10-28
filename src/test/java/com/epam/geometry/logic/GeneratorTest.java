@@ -1,6 +1,5 @@
 package com.epam.geometry.logic;
 
-import com.epam.geometry.Generator;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,8 +9,12 @@ public class GeneratorTest {
 
     @Test
     public void shouldGenerateZero() {
+        // given
 
+        // when
         long result = Generator.generateID();
+
+        // then
         Assert.assertEquals(ZERO, result);
     }
 }
