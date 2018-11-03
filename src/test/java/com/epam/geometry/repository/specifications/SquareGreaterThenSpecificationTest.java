@@ -5,8 +5,6 @@ import com.epam.geometry.entities.Point;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class SquareGreaterThenSpecificationTest {
 
     private static final Cube CUBE = new Cube(5, new Point(1, 1, 1));

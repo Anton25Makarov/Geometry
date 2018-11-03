@@ -14,18 +14,21 @@ public class CubeRepository implements Repository<Cube> {
 
     @Override
     public void add(Cube cube) {
-        data.put(cube.getId(), cube);
+        long cubeId = cube.getId();
+        data.put(cubeId, cube);
     }
 
     @Override
     public void remove(Cube cube) {
-        data.remove(cube.getId(), cube);
+        long cubeId = cube.getId();
+        data.remove(cubeId, cube);
     }
 
     @Override
     public void update(Cube cube) {
-        if (data.containsKey(cube.getId())) {
-            data.put(cube.getId(), cube);
+        long cubeId = cube.getId();
+        if (data.containsKey(cubeId)) {
+            data.put(cubeId, cube);
         }
     }
 

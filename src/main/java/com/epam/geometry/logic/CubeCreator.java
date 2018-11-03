@@ -1,6 +1,5 @@
 package com.epam.geometry.logic;
 
-//import org.apache.log4j.Logger;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +21,6 @@ public class CubeCreator {
 
     public List<Cube> createCubesFromFile(String filePath) {
         List<Cube> listOfCubes = new ArrayList<>();
-
         try {
             DataReader dataReader = new DataReader();
             List<String> linesFromFile = dataReader.readLines(filePath);

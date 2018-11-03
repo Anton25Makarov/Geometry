@@ -21,9 +21,17 @@ public class DataParser {
 
         String[] values = string.split(" ");
 
-        Point point = new Point(Double.valueOf(values[1]), Double.valueOf(values[2]), Double.valueOf(values[3]));
+        String stringPointX = values[1];
+        String stringPointY = values[2];
+        String stringPointZ = values[3];
 
-        return new Cube(Double.valueOf(values[0]), point);
+        Point point = new Point(Double.valueOf(stringPointX),
+                Double.valueOf(stringPointY),
+                Double.valueOf(stringPointZ));
+
+        String cubeSide = values[0];
+
+        return new Cube(Double.valueOf(cubeSide), point);
     }
 
     public List<Cube> parseCubes(List<String> stringList) {
@@ -33,8 +41,18 @@ public class DataParser {
         for (String string : stringList) {
             if (cubeValidator.isValid(string)) {
                 String[] values = string.split(" ");
-                Point point = new Point(Double.valueOf(values[1]), Double.valueOf(values[2]), Double.valueOf(values[3]));
-                Cube cube = new Cube(Double.valueOf(values[0]), point);
+
+                String stringPointX = values[1];
+                String stringPointY = values[2];
+                String stringPointZ = values[3];
+
+                Point point = new Point(Double.valueOf(stringPointX),
+                        Double.valueOf(stringPointY),
+                        Double.valueOf(stringPointZ));
+
+                String cubeSide = values[0];
+                Cube cube = new Cube(Double.valueOf(cubeSide), point);
+
                 cubeList.add(cube);
             }
         }

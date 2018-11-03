@@ -14,7 +14,7 @@ public class CompareByIdTest {
     private CompareById compareById = new CompareById();
 
     @Test
-    public void shouldReturnTrueWhenIdOfTheFirstCubeIsLessThanIdOfTheSecondCube() {
+    public void shouldReturnNegativeNumberWhenIdOfTheFirstCubeIsLessThanIdOfTheSecondCube() {
         // given
 
         // when
@@ -24,18 +24,4 @@ public class CompareByIdTest {
         Assert.assertTrue(result < 0);
     }
 
-      /*  CubeRepository cubeRepository = new CubeRepository();
-        Cube cube1 = new Cube(1, new Point(1, 1, 1));
-        Cube cube3 = new Cube(3, new Point(3, 3, 3));
-        Cube cube2 = new Cube(2, new Point(2, 2, 2));
-        cubeRepository.add(cube1);
-        cubeRepository.add(cube2);
-        cubeRepository.add(cube3);
-
-        System.out.println(cubeRepository.toString());
-
-        List<Cube> cubeList = cubeRepository.sortBy(new CompareById());
-
-        System.out.println(cubeList);
-*/
 }

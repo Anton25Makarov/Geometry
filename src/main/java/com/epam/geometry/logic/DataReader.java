@@ -12,8 +12,8 @@ import java.util.Scanner;
 public class DataReader {
 
     public List<String> readLines(String filePath) throws ReadFileException {
-
         List<String> stringList = new ArrayList<>();
+
         try (Scanner scanner = new Scanner(Paths.get(filePath), "UTF-8")) {
             while (scanner.hasNextLine()) {
                 stringList.add(scanner.nextLine());
@@ -21,7 +21,7 @@ public class DataReader {
         } catch (NoSuchFileException e) {
             throw new ReadFileException("Can not find file", e);
         } catch (IOException e) {
-            throw new ReadFileException("Can not open file", e);
+            throw new ReadFileException("I/O Exception", e);
         }
 
         return stringList;

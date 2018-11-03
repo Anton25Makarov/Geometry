@@ -6,11 +6,13 @@ import com.epam.geometry.entities.Point;
 public class Calculator {
 
     public double calculateSquare(Cube cube) {
-        return 6 * Math.pow(cube.getSide(), 2);
+        double cubeSide = cube.getSide();
+        return 6 * Math.pow(cubeSide, 2);
     }
 
     public double calculateVolume(Cube cube) {
-        return Math.pow(cube.getSide(), 3);
+        double cubeSide = cube.getSide();
+        return Math.pow(cubeSide, 3);
     }
 
     public double calculateRatioVolumes(Cube cube, Point pointSeparatorY) {
@@ -23,8 +25,8 @@ public class Calculator {
             return 0; // plane XOZ on pointSeparatorY is't cross the cube plane
         }
 
-        return ((highestY - pointSeparatorY.getY())
-                / (pointSeparatorY.getY() - lowestY));
+        return (highestY - pointSeparatorY.getY()) /
+                (pointSeparatorY.getY() - lowestY);
     }
 
     public boolean isOnCoordinatePlane(Cube cube) {
@@ -48,9 +50,14 @@ public class Calculator {
 
     public double calculateDistanceBetweenOriginAndCenterPoint(Cube cube) {
         Point centerPoint = cube.getCenterPoint();
-        double xSquared = Math.pow(centerPoint.getX(), 2);
-        double ySquared = Math.pow(centerPoint.getY(), 2);
-        double zSquared = Math.pow(centerPoint.getZ(), 2);
+
+        double centerPointX = centerPoint.getX();
+        double centerPointY = centerPoint.getY();
+        double centerPointZ = centerPoint.getZ();
+
+        double xSquared = Math.pow(centerPointX, 2);
+        double ySquared = Math.pow(centerPointY, 2);
+        double zSquared = Math.pow(centerPointZ, 2);
 
         return Math.sqrt(xSquared + ySquared + zSquared);
     }

@@ -13,14 +13,14 @@ public class CompareByPointXTest {
     private CompareByPointX compareByPointX = new CompareByPointX();
 
     @Test
-    public void shouldReturnTrueWhenXCoordinateOfTheFirstCubeIsLessThanXCoordinateOfTheSecondCube() {
+    public void shouldReturnNegativeNumberTrueWhenXCoordinateOfTheFirstCubeIsLessThanXCoordinateOfTheSecondCube() {
         // given
 
         // when
-        int result = compareByPointX.compare(CUBE_FIRST, CUBE_SECOND);
+        boolean result = compareByPointX.compare(CUBE_FIRST, CUBE_SECOND) < 0;
 
         // then
-        Assert.assertTrue(result < 0);
+        Assert.assertTrue(result);
     }
 
 }

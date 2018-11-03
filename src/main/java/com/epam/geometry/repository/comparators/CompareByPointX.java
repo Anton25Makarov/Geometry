@@ -7,10 +7,10 @@ import com.epam.geometry.repository.Comparator;
 public class CompareByPointX implements Comparator<Cube> {
 
     @Override
-    public int compare(Cube obj1, Cube obj2) {
-        Point centerPoint1 = obj1.getCenterPoint();
-        Point centerPoint2 = obj2.getCenterPoint();
+    public int compare(Cube objFirst, Cube objSecond) {
+        Point centerPointFirst = objFirst.getCenterPoint();
+        Point centerPointSecond = objSecond.getCenterPoint();
 
-        return (int) (centerPoint1.getX() - centerPoint2.getX());
+        return (int) (centerPointFirst.getX() - centerPointSecond.getX());
     }
 }

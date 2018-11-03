@@ -6,7 +6,7 @@ import com.epam.geometry.repository.Comparator;
 public class CompareById implements Comparator<Cube> {
 
     @Override
-    public int compare(Cube obj1, Cube obj2) {
-        return (int) (obj1.getId() - obj2.getId());
+    public int compare(Cube objFirst, Cube objSecond) {
+        return (int) (objFirst.getId() - objSecond.getId());
     }
 }

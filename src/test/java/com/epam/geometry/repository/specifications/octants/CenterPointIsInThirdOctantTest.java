@@ -2,11 +2,8 @@ package com.epam.geometry.repository.specifications.octants;
 
 import com.epam.geometry.entities.Cube;
 import com.epam.geometry.entities.Point;
-import com.epam.geometry.repository.specifications.VolumeIsBetweenSpecification;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class CenterPointIsInThirdOctantTest {
 

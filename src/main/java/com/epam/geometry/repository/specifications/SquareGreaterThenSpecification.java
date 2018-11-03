@@ -19,6 +19,5 @@ public class SquareGreaterThenSpecification implements Specification<Cube> {
         double currentSquare = calculator.calculateSquare(cube);
 
         return Double.compare(currentSquare, square) > 0;
-
     }
 }

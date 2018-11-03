@@ -13,15 +13,14 @@ public class CompareBySideTest {
     private CompareBySide compareBySide = new CompareBySide();
 
     @Test
-    public void shouldReturnTrueWhenSideOfTheFirstCubeIsLessThanSideOfTheSecondCube() {
+    public void shouldReturnNegativeNumberWhenSideOfTheFirstCubeIsLessThanSideOfTheSecondCube() {
         // given
 
         // when
-        int result = compareBySide
-                .compare(CUBE_FIRST, CUBE_SECOND);
+        boolean result = compareBySide.compare(CUBE_FIRST, CUBE_SECOND) < 0;
 
         // then
-        Assert.assertTrue(result < 0);
+        Assert.assertTrue(result);
     }
 
 }

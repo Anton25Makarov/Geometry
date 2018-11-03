@@ -5,8 +5,6 @@ import com.epam.geometry.entities.Point;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class DistanceBetweenOriginAndCenterPointIsBetweenSpecificationTest {
 
     private static final Cube CUBE = new Cube(2, new Point(2, 2, 2));

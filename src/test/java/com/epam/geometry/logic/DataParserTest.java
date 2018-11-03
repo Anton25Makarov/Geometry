@@ -15,7 +15,6 @@ public class DataParserTest {
     private static final Cube FIRST_CUBE = new Cube(1, new Point(2.0, 2.0, 2.0));
     private static final Cube SECOND_CUBE = new Cube(2, new Point(4.0, 4.0, 4.0));
 
-
     @Test
     public void shouldReturnCubeWhenStringIsValid() {
         // given
